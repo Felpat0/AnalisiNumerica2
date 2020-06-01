@@ -56,5 +56,7 @@ int main(){
     }
 
     m.printMatrix();
+    cout<<endl;
+    system("pause");
     return 0;
 }
