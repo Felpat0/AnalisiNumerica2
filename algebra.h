@@ -105,6 +105,18 @@ class Matrix{
         }
     }
 
+    Matrix transposeMatrix(){
+        Matrix temp = Matrix(dimension);
+        for(int i = 0; i != dimension; i++){
+            for(int j = i; j != dimension; j++){
+                temp.matrix[i][j] = matrix[j][i];
+                temp.matrix[j][i] = matrix[i][j];
+            }
+        }
+
+        return temp;
+    }
+
     myVector getColumn(int j){
         myVector temp = myVector(dimension);
         for(int i = 0; i != dimension; i++){
