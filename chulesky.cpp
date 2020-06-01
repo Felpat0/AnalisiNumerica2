@@ -15,7 +15,7 @@ int main(){
         for(int j = 0; j != i + 1; j++){
             long double s = 0;
             if(i == j){
-                for(int k = 0; k != j + 1; k++){
+                for(int k = 0; k != j; k++){
                     s += ((l.matrix[j][k]) * (l.matrix[j][k]));
                 }
                 l.matrix[j][j] = sqrt(m.matrix[j][j] - s);
