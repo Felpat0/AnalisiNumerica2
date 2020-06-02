@@ -7,13 +7,16 @@ int main(){
     Matrix m = Matrix(n);
     //Set the values of the matrix
     m.setMatrix();
+    cout<<endl<<"M ="<<endl;
+    m.printMatrix();
     for(int k = 0; k != m.dimension-1; k++){
         Matrix x = Matrix(n, 'i');
         
+        //Find the pivot and insert his index into the var "index"
         long double max = m.matrix[k][k];
         unsigned int index = 0;
         for(int i = 1; i != m.dimension; i++){
-            if(m.matrix[i][k] > max){
+            if(std::abs(m.matrix[i][k]) > std::abs(max)){
                 max = m.matrix[i][k];
                 index = i;
             }
@@ -39,10 +42,12 @@ int main(){
             else
                 x.matrix[i][k] = -1*(m.matrix[i][k]/m.matrix[k][k]);
         }
-        cout<<endl<<endl<<"X"<<k<<" ="<<endl;
+        cout<<endl<<endl<<"E"<<k+1<<" ="<<endl;
         x.printMatrix();
         m = x*m;
-        cout<<endl<<endl<<"X"<<k<<"*M ="<<endl;
+        cout<<endl<<endl<<"E"<<k+1<<"*M ="<<endl;
         m.printMatrix();
     }
+    system("pause");
+    return 0;
 }

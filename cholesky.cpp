@@ -7,6 +7,8 @@ int main(){
     Matrix m = Matrix(n);
     //Set the values of the matrix
     m.setMatrix();
+    cout<<endl<<"M ="<<endl;
+    m.printMatrix();
     Matrix l = Matrix(n);
     for(int i = 0; i != m.dimension; i++){
         int s = 0;
@@ -27,12 +29,15 @@ int main(){
         }
     }
     cout<<endl<<endl;
-    cout<<"L:"<<endl;
+    cout<<"L ="<<endl;
     l.printMatrix();
     cout<<endl<<endl;
-    cout<<"Transposed L:"<<endl;
+    cout<<"Transposed L ="<<endl;
     (l.transposeMatrix()).printMatrix();
     cout<<endl<<endl;
-    cout<<"L*Transposed L:"<<endl;
+    cout<<"L*Transposed L ="<<endl;
     (l*(l.transposeMatrix())).printMatrix();
+
+    system("pause");
+    return 0;
 }
